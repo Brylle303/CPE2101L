@@ -12,6 +12,7 @@ public class changeDenomination {
         System.out.print("[Change Calculator]\nEnter a number between 1 and 99: ");
 
         coinInput = scan.nextInt();
+        scan.close();
 
         if(coinInput >= 1 && coinInput <= 99) {
             int coin25 = coinInput / 25;
