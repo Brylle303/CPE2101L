@@ -38,8 +38,8 @@ public class Person {
 		}
 	}
 	
-	public boolean isSameName(Object obj) {
-		if(this.name == obj) {
+	public boolean isSameName(String name) {
+		if(this.name == name) {
 			return true;
 		}
 		else {
@@ -47,5 +47,31 @@ public class Person {
 		}
 	}
 	
+	public boolean isSameAge(int age) {
+		if(this.age == age) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean isOlder(int age) {
+		if(this.age > age) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public boolean isYounger(int age) {
+		if(this.age < age) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 }
