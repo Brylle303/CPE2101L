@@ -7,15 +7,15 @@ public class RectangleTest {
 		Rectangle firstRectangle = new Rectangle(4, 40);
 		Rectangle secondRectangle = new Rectangle(3.5, 35.9);
 		
-		System.out.println("Rectangle 1\nWidth: " + firstRectangle.width);
+		System.out.println("[Rectangle 1]\nWidth: " + firstRectangle.width);
 		System.out.println("Height: " + firstRectangle.height);
-		System.out.println("Area: " + firstRectangle.getArea());
-		System.out.println("Perimeter: " + firstRectangle.getPerimeter());
+		System.out.printf("Area: %.2f\n", firstRectangle.getArea());
+		System.out.printf("Perimeter: %.2f\n", firstRectangle.getPerimeter());
 		
-		System.out.println("\nRectangle 2\nWidth: " + secondRectangle.width);
+		System.out.println("\n[Rectangle 2]\nWidth: " + secondRectangle.width);
 		System.out.println("Height: " + secondRectangle.height);
-		System.out.println("Area: " + secondRectangle.getArea());
-		System.out.println("Perimeter: " + secondRectangle.getPerimeter());
+		System.out.printf("Area: %.2f\n", secondRectangle.getArea());
+		System.out.printf("Perimeter: %.2f\n", secondRectangle.getPerimeter());
 		
 		
 		
