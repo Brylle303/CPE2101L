@@ -5,7 +5,7 @@ public class GradeTest {
 	public static void main(String[] args) {
 		GradeDistribution myGrades = new GradeDistribution();
 		
-		myGrades.setNumberA(10);
+		myGrades.setNumberA(1);
 		myGrades.setNumberB(4);
 		myGrades.setNumberC(6);
 		myGrades.setNumberD(2);

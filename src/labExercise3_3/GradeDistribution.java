@@ -4,20 +4,35 @@ public class GradeDistribution {
 	
 	private double gradeA, gradeB, gradeC, gradeD, gradeF;
 	
+	// Default constructor
+	public GradeDistribution() {
+		
+	}
+	
+	// Alternative constructor
+	public GradeDistribution(double gradeA, double gradeB, double gradeC, double gradeD,  double gradeF) {
+		setNumberA(gradeA);
+		setNumberB(gradeB);
+		setNumberC(gradeC);
+		setNumberD(gradeD);
+		setNumberF(gradeF);
+		
+	}
+	
 	// Methods for setting each grade
 	public void setNumberA(double gradeA) {
 		this.gradeA = gradeA;
 	}
-	public void setNumberB(int gradeB) {
+	public void setNumberB(double gradeB) {
 		this.gradeB = gradeB;
 	}
-	public void setNumberC(int gradeC) {
+	public void setNumberC(double gradeC) {
 		this.gradeC = gradeC;
 	}
-	public void setNumberD(int gradeD) {
+	public void setNumberD(double gradeD) {
 		this.gradeD = gradeD;
 	}
-	public void setNumberF(int gradeF) {
+	public void setNumberF(double gradeF) {
 		this.gradeF = gradeF;
 	}
 	
