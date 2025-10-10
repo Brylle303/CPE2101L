@@ -76,19 +76,8 @@ public class GradeDistribution {
 	
 	
 	public void drawGraph() {
-		int a = 0;
 		
-		for(int i=0;i <= 50; i++) {
-			if(i % 5 != 0) {
-				
-				System.out.print(" ");
-			}
-			else {
-				System.out.print(a);
-				a++;
-			}
-		}
-		System.out.println();
+		System.out.println("0    10   20   30   40   50   60   70   80   90  100%");
 		
 		for(int i=0;i <= 50; i++) {
 			if(i % 5 != 0) {
@@ -100,10 +89,10 @@ public class GradeDistribution {
 			}
 		}
 		System.out.println();
-		for(int i=0;i < 50; i++) {
+		for(int i=0;i <= 50; i++) {
 			System.out.print("*");
 		}
-		System.out.println("\n");
+		System.out.println();
 		
 		// Drawing the asterisk for each grade
 		for(int i=0;i < Math.round((percentageOfGradeA() / 2)); i++) {
