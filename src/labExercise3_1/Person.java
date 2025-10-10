@@ -28,14 +28,8 @@ public class Person {
 		this.age = age;
 	}
 	
-	public boolean isEqual(Object obj) {
-		
-		if(this == obj) {
-			return true;
-		}
-		else {
-			return false;
-		}
+	public boolean isEqual(Person person) {
+		return this.name.equals(person.name) && age == person.age;
 	}
 	
 	public boolean isSameName(String name) {
