@@ -11,6 +11,7 @@ public class GradeTest {
 //		myGrades.setNumberC(6);
 //		myGrades.setNumberD(2);
 //		myGrades.setNumberF(1);
+		
 		myGrades.drawGraph();
 		
 	}
