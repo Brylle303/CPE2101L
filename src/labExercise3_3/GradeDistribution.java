@@ -58,8 +58,8 @@ public class GradeDistribution {
 		return gradeA + gradeB + gradeC + gradeD + gradeF;
 	}
 	
-	public double percentageOfGradeA() {
-		return  Math.round((gradeA / totalGrades()) * 100);
+	public int percentageOfGradeA() {
+		return (int) Math.round((gradeA / totalGrades()) * 100);
 	}
 	public int percentageOfGradeB() {
 		return (int) Math.round((gradeB / totalGrades()) * 100);

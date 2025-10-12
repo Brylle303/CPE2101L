@@ -7,7 +7,7 @@ public class PersonTest {
 		Person secondPerson = new Person();
 		
 		// CASE 1:
-		System.out.println("CASE 1:");
+		System.out.println("CASE 1: Diff name & Diff age");
 		firstPerson.setName("Brylle");
 		firstPerson.setAge(19);
 		secondPerson.setName("Jenny");
@@ -30,7 +30,7 @@ public class PersonTest {
 		System.out.println("Person 1 younger?: " + firstPerson.isYounger(age2));
 		
 		//CASE 2:
-		System.out.println("\nCASE 2:");
+		System.out.println("\nCASE 2: Same name & Same age");
 		firstPerson.setName("Brylle");
 		firstPerson.setAge(20);
 		secondPerson.setName("Brylle");
@@ -68,8 +68,7 @@ public class PersonTest {
 		System.out.println("Person 1 older?: " + firstPerson.isOlder(age2));
 		System.out.println("Person 1 younger?: " + firstPerson.isYounger(age2));
 		
-		
-		
+			
 	}
 
 }
