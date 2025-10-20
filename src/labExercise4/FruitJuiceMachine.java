@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class FruitJuiceMachine {
 	
+	 
+	
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
@@ -24,7 +26,7 @@ public class FruitJuiceMachine {
 		do {
 			
 			System.out.println("[Fruit Juice Machine]\nEnter a number to select a product:");
-			System.out.println("(1) Apple Juice\n(2) Orange Juice\n(3) Mango Lassi\n(4) Fruit Punch\n(5) Check Register");
+			System.out.println("(1) Apple Juice\n(2) Orange Juice\n(3) Mango Lassi\n(4) Fruit Punch\n(5) Check Register\n(6) EXIT");
 			System.out.print("[CHOICE]: ");
 			
 			choice1 = scan.nextInt();
@@ -93,6 +95,8 @@ public class FruitJuiceMachine {
 			case 5:
 				System.out.println("[!] Balance: " + register.getCurrentBalance());
 				break;
+			case 6:
+				return;
 			default:
 				System.out.println("Invalid input!");
 				break;

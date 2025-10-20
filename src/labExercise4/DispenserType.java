@@ -15,7 +15,7 @@ public class DispenserType {
 	}
 	
 	public void makeSale() {
-		numberOfItems--;
+		numberOfItems--;	
 	}
 	
 	public int getNoOfItems() {
