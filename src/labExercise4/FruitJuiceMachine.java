@@ -4,98 +4,98 @@ import java.util.Scanner;
 
 public class FruitJuiceMachine {
 	
-	 
+	public static void showSelection() {
+		System.out.println("[Fruit Juice Machine]\nEnter a number to select a product:");
+		System.out.println("(1) Apple Juice\n(2) Orange Juice\n(3) Mango Lassi\n(4) Fruit Punch\n(5) Check Register\n(6) EXIT");
+		System.out.print("[CHOICE]: ");
+	}
+	
+	public static void sellProduct(Scanner scan, CashRegister register, DispenserType item, String name) {
+		char choice2;
+		int deposit;
+		
+		System.out.println("\n[!] You have selected " + name);
+		
+		if(item.getNoOfItems() == 0) {
+			System.out.println("This item has no available stock!");
+			return;
+		}
+		
+		System.out.println("[ ] Available: " + item.getNoOfItems() + "  Cost: " + item.getCost() + " cents");
+		System.out.print("[ ] Buy? (Y/N): ");
+		choice2 = scan.next().charAt(0);
+		
+		if(choice2 == 'Y' || choice2 == 'y') {
+			
+			System.out.print("Deposit amount to proceed\nINPUT: ");
+			deposit = scan.nextInt();
+			while (deposit != item.getCost()) {
+				System.out.print("Insufficient amount! Input again!\nINPUT:");
+				deposit = scan.nextInt();
+			}
+			register.acceptAmount(item.getCost());
+			item.makeSale();
+			System.out.println("[!] Purchase Successful!");
+		}
+		else {
+			System.out.println("[Transaction cancelled]");
+		}
+	}
+	
 	
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
 		
 		CashRegister register = new CashRegister();
-		DispenserType appleJuice = new DispenserType(50, 100);
+		DispenserType appleJuice = new DispenserType(0, 100);
 		DispenserType orangeJuice = new DispenserType(50, 100);
 		DispenserType mangoLassi = new DispenserType(25, 250);
 		DispenserType fruitPunch = new DispenserType(25, 150);
 		
 		int choice1 = 0;
-		char choice2;
 		char choice3;
 		boolean isDone = false;
+		String name;
 		
 		
 		
 		do {
 			
-			System.out.println("[Fruit Juice Machine]\nEnter a number to select a product:");
-			System.out.println("(1) Apple Juice\n(2) Orange Juice\n(3) Mango Lassi\n(4) Fruit Punch\n(5) Check Register\n(6) EXIT");
-			System.out.print("[CHOICE]: ");
+			showSelection();
 			
 			choice1 = scan.nextInt();
 			
 			switch(choice1) {
 			case 1:
-				System.out.println("\n[!] You have selected [Apple Juice]");
-				System.out.println("[ ] Available: " + appleJuice.getNoOfItems() + "  Cost:" + appleJuice.getCost() + " cents");
-				System.out.print("[ ] Buy? (Y/N): ");
-				choice2 = scan.next().charAt(0);
+				name = "Apple Juice";
 				
-				if(choice2 == 'Y' || choice2 == 'y') {
-					register.acceptAmount(appleJuice.getCost());
-					appleJuice.makeSale();
-					System.out.println("[!] Purchase Successful!");
-				}
-				else {
-					System.out.println("[Transaction cancelled]");
-				}
+				sellProduct(scan, register, appleJuice, name);
+				
 				break;
 			case 2:
-				System.out.println("\n[!] You have selected [Orange Juice]");
-				System.out.println("[ ] Available: " + orangeJuice.getNoOfItems() + "  Cost:" + orangeJuice.getCost() + " cents");
-				System.out.print("[ ] Buy? (Y/N): ");
-				choice2 = scan.next().charAt(0);
+				name = "Orange Juice";
 				
-				if(choice2 == 'Y' || choice2 == 'y') {
-					register.acceptAmount(orangeJuice.getCost());
-					orangeJuice.makeSale();
-					System.out.println("[!] Purchase Successful!");
-				}
-				else {
-					System.out.println("[Transaction cancelled]");
-				}
+				sellProduct(scan, register, orangeJuice, name);
+				
 				break;
 			case 3:
-				System.out.println("\n[!] You have selected [Mango Lassi]");
-				System.out.println("[ ] Available: " + mangoLassi.getNoOfItems() + "  Cost:" + mangoLassi.getCost() + " cents");
-				System.out.print("[ ] Buy? (Y/N): ");
-				choice2 = scan.next().charAt(0);
+				name = "Mango Lassi";
+			
+				sellProduct(scan, register, mangoLassi, name);
 				
-				if(choice2 == 'Y' || choice2 == 'y') {
-					register.acceptAmount(mangoLassi.getCost());
-					mangoLassi.makeSale();
-					System.out.println("[!] Purchase Successful!");
-				}
-				else {
-					System.out.println("[Transaction cancelled]");
-				}
 				break;
 			case 4:
-				System.out.println("\n[!] You have selected [Fruit Punch]");
-				System.out.println("[ ] Available: " + fruitPunch.getNoOfItems() + "  Cost:" + fruitPunch.getCost() + " cents");
-				System.out.print("[ ] Buy? (Y/N): ");
-				choice2 = scan.next().charAt(0);
+				name = "Fruit Punch";
 				
-				if(choice2 == 'Y' || choice2 == 'y') {
-					register.acceptAmount(fruitPunch.getCost());
-					fruitPunch.makeSale();
-					System.out.println("[!] Purchase Successful!");
-				}
-				else {
-					System.out.println("[Transaction cancelled]");
-				}
+				sellProduct(scan, register, fruitPunch, name);
+				
 				break;
 			case 5:
 				System.out.println("[!] Balance: " + register.getCurrentBalance());
 				break;
 			case 6:
+				System.out.println("[Exiting Program!]");
 				return;
 			default:
 				System.out.println("Invalid input!");
